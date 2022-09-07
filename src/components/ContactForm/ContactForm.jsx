@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import s from "../Contacts.module.scss"
+import s from "../App.module.scss"
 
-export const ContactForm = props => {
+const ContactForm = props => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const data = { name, number };
@@ -59,3 +59,4 @@ export const ContactForm = props => {
     </form>
   );
 };
+export default ContactForm

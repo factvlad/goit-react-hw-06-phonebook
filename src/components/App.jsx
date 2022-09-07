@@ -1,13 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
-import { addContacts, removeContacts } from '../redux/contacts/contacts-slice';
+import { ContactForm, ContactList, Filter } from 'components';
+import { addContacts, removeContacts } from 'redux/contacts/contacts-slice';
 import { setFilter } from 'redux/filter/filter-slice';
 import { getContacts } from 'redux/contacts/contacts-selectors';
 import { getFilter } from 'redux/filter/filter-selectors';
-import s from "./Contacts.module.scss"
+import s from "./App.module.scss"
 
 export const App = () => {
   const contacts = useSelector(getContacts);

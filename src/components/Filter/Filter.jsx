@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import s from "../Contacts.module.scss"
+import s from "../App.module.scss"
 
-export const Filter = ({ onFilterChange, value }) => {
+const Filter = ({ onFilterChange, value }) => {
   return (
     <input
       className={ s.input }
@@ -18,3 +18,5 @@ Filter.propTypes = {
   value: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
 };
+
+export default Filter
