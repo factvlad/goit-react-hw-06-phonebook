@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import Notiflix from 'notiflix';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -24,14 +25,20 @@ export const App = () => {
     );
 
     if (findSimilarContact) {
-      alert('Contact already exists');
+      Notiflix.Report.warning(
+        `Warning`,
+        `Contacts is already in cotacts`,
+        'Confirm'
+      );
     } else {
       const action = addContacts(payload);
+      Notiflix.Notify.success('You have a new Contact');
       dispatch(action);
     }
   };
   const deleteContact = payload => {
     const action = removeContacts(payload);
+    Notiflix.Notify.failure('You delete the contact, Sorry Bro')
     dispatch(action);
   };
 
